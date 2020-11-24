@@ -60,8 +60,9 @@ def cls_loss(pred, pred_aug, gold, pc_tran, aug_tran, pc_feat, aug_feat, ispn = 
         cls_aug = cls_aug + 0.001*mat_loss(aug_tran)
 
     feat_diff = 10.0*mse_fn(pc_feat,aug_feat)
-
-    cls_loss = cls_pc + cls_aug  + feat_diff #+ cls_diff
+    parameters = torch.max(torch.tensor(NUM).cuda(), torch.exp(1.0-cls_pc_raw)**2).cuda()
+    cls_diff = (torch.abs(cls_pc_raw - cls_aug_raw) * (parameters*2)).mean()
+    cls_loss = cls_pc + cls_aug  + feat_diff + cls_diff
 
     return cls_loss
 
