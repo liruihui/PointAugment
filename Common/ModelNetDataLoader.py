@@ -53,7 +53,7 @@ class ModelNetDataLoader(Dataset):
     def __getitem__(self, index):
         pc = self.data[index][:self.num_points,:self.dim].copy()
         label = self.label[index]
-        np.random.shuffle(pc)
+        # np.random.shuffle(pc)
         # if self.partition == 'train':
         #     #np.random.shuffle(pc)
         #     pc = point_transform(pc)
