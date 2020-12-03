@@ -30,13 +30,14 @@ conda install pytorch=1.2.0 torchvision cudatoolkit=10.0 -c pytorch -y
 ```
 
 ### Usage
-Download the ModelNet40 dataset from <a href="https://shapenet.cs.stanford.edu/media/modelnet40_ply_hdf5_2048.zip" target="_blank">here</a>. 
+Download the ModelNet40 dataset from <a href="https://shapenet.cs.stanford.edu/media/modelnet40_ply_hdf5_2048.zip" target="_blank">here</a>.
 
 To train a model to classify point clouds sampled from 3D shapes:
 
     python train_PA.py --data_dir ModelNet40_Folder
 
 Log files and network parameters will be saved to `log` folder in default. 
+Noted that the code may be not stable, if you can help please contact me.
 
 
 ### Citation
