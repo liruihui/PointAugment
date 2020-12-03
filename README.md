@@ -37,6 +37,7 @@ To train a model to classify point clouds sampled from 3D shapes:
     python train_PA.py --data_dir ModelNet40_Folder
 
 Log files and network parameters will be saved to `log` folder in default. 
+
 Noted that the code may be not stable, if you can help please contact me.
 
 
